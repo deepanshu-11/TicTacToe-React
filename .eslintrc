@@ -2,6 +2,8 @@
   "extends": [
     "eslint:recommended",
     "plugin:react/recommended",
+    //jsx-runtime tells eslint that we using
+    //react 18/latest so please dont throw err
     "plugin:react/jsx-runtime",
     "prettier"
   ],
