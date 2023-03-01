@@ -5,10 +5,10 @@ import { calculateWinner } from './winner';
 import StatusMessage from './components/statusMessage';
 import History from './components/History';
 
+const NEW_GAME = [{ squares: Array(9).fill(null), isXnext: true }];
+
 function App() {
-  const [history, setHistory] = useState([
-    { squares: Array(9).fill(null), isXnext: true },
-  ]);
+  const [history, setHistory] = useState(NEW_GAME);
   const [currentMove, setCurrentMove] = useState(0);
 
   //statusMessage is dervied/computed from state so njot necessary to use state
