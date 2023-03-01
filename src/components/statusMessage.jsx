@@ -1,5 +1,6 @@
 import React from 'react';
-const StatusMessage = ({ winner, isXnext, squares }) => {
+const StatusMessage = ({ winner, gamingBoard }) => {
+  const { squares, isXnext } = gamingBoard;
   const noMovesLeft = squares.every(squareValue => {
     return squareValue !== null;
   });
