@@ -16,7 +16,7 @@ function App() {
   // console.log(gamingBoard);
   // console.log(history);
 
-  const winner = calculateWinner(gamingBoard.squares);
+  const { winner, winningSquares } = calculateWinner(gamingBoard.squares);
 
   const handleSquareClick = clickedPosition => {
     if (gamingBoard.squares[clickedPosition] || winner) {
@@ -79,11 +79,15 @@ function App() {
     //hooks in react are fn that allow us to manipulate componenet
     //lifecycle
     <div className="app">
+      <h1>
+        Tic <span className="text-green">Tac</span> Toe
+      </h1>
       {/* <h2>{statusMessage}</h2> */}
       <StatusMessage winner={winner} gamingBoard={gamingBoard} />
       <Board
         squares={gamingBoard.squares}
         handleSquareClick={handleSquareClick}
+        winningSquares={winningSquares}
       />
       <br />
       <button
@@ -93,7 +97,13 @@ function App() {
       >
         Reset Game
       </button>
-      <h2>Current Game History</h2>
+      <h2
+        style={{
+          fontWeight: 'normal',
+        }}
+      >
+        Current Game History
+      </h2>
       <History history={history} moveTo={moveTo} currentMove={currentMove} />
     </div>
   );
